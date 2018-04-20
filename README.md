@@ -27,20 +27,6 @@ Steps to setup project for your needs: It is highly recommended that you use Pyt
 
 If you want to use exactly what's in tutorial made by Sentdex, use v0.1 tag. There are multiple changes after last part of tutorial.
 
-$ git clone --recursive https://github.com/daniel-kukiela/nmt-chatbot
-(or)
-$ git clone --branch v0.1 --recursive https://github.com/daniel-kukiela/nmt-chatbot.git (for a version featured in Sentdex tutorial)
-$ cd nmt-chatbot
-$ pip install -r requirements.txt TensorFlow-GPU is one of the requirements. You also need CUDA Toolkit 8.0 and cuDNN 6.1. (Windows tutorial: https://www.youtube.com/watch?v=r7-WPbx8VuY Linux tutorial: https://pythonprogramming.net/how-to-cuda-gpu-tensorflow-deep-learning-tutorial/)
-$ cd setup
-(optional) edit settings.py to your liking. These are a decent starting point for ~4GB of VRAM, you should first start by trying to raise vocab if you can.
-(optional) Edit text files containing rules in the setup directory.
-Place training data inside "new_data" folder (train.(from|to), tst2013.(from|to), tst2013(from|to)). We have provided some sample data for those who just want to do a quick test drive.
-$ python prepare_data.py ...Run setup/prepare_data.py - a new folder called "data" will be created with prepared training data
-$ cd ../
-$ python train.py Begin training
-Version 0.3 introduces epoch-based training including custom (epoch-based as well) decaying scheme - refer to preprocessing['epochs'] in setup/settings.py for more detailed explanation and example (enabled by default).
-
 Custom summary values (evaluation)
 It is possible to add custom values logged into model logs. TensorBoard will plot those values in a separate graphs.
 
